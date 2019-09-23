@@ -1,0 +1,36 @@
+.navbar-brand {
+    float: inherit;    
+    font-size: 20px;       
+}
+.navbar-brand img{
+    width: 25px;
+    height:25px;   
+    display: inline-flex;   
+}
+.navbar.navbar-inverse{
+    background-color:darkslategray;
+    border: 0px;   
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);    
+}
+li a {
+    display: block;
+    color:white;        
+    text-decoration: none;     
+}
+li a:hover {
+    background-color: #555;
+    color:whitesmoke;;
+}
+li a:active{
+    color:black;
+}
+.nav.navbar-nav > li > a:focus {
+    background-color: #555;
+    color:whitesmoke;        
+}
+.navbar-header >button  {
+    background-color:grey;    
+} 
+.dropdown-menu li a{
+    color: black;
+}

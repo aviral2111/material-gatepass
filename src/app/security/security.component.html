@@ -1,0 +1,184 @@
+<div class="model-form">
+  <div class="form">
+      <h1>Material Gatepass</h1>
+      <p> Please allow take following items out.</p>
+      <hr>    
+      <div *ngIf='loading'>We are loading data</div>  
+    <form class="model-form">
+      <input type="text" placeholder="Sl. No." readonly  value="{{g.slNo}}"/>
+      <input type="datetime-local" placeholder="please add date and time" readonly value="{{g.gatePassDate}}"/>
+      <input type="text" placeholder="Issuer Name" readonly value="{{g.issuerName}}"/>
+      <input type="text" placeholder="Issuer Mobile" readonly value="{{g.issuerMobile}}"/>
+      <input type="text" placeholder="Issuer Department" readonly value="{{g.issuerDepartment}}"/>
+      <input type="text" placeholder="Authoriser Name" readonly value="{{g.authoriserName}}"/>
+      <input type="text" placeholder="Authoriser Mobile" readonly value="{{g.authoriserMobile}}"/>
+      <input type="text" placeholder="Authoriser Department" readonly value="{{g.authoriserDepartment}}"/>
+      <input type="text" placeholder="From" readonly value="{{g.from}}"/>
+      <input type="text" placeholder="To" readonly value="{{g.to}}"/>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 75px;">S.No.</th>
+            <th style="width: 28%;">Material</th>
+            <th style="width: 100px;">Quantity</th>
+            <th>Description</th>
+            <th style="width: 20%;">Type</th>            
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of g.items" >
+                <td>{{item.srNo}}</td>
+                <td>{{item.materialName}}</td>
+                <td>{{g.items.length}}</td>           
+                <td>{{item.description}}</td>     
+                <td>Returnable</td>
+            </tr>
+
+          <!-- <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="text" placeholder="Material" readonly/></td>
+            <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+            <td><input type="text" placeholder="Item Description" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly>            
+              <datalist id="type">
+                <option value="Returnable">
+                <option value="Non-Returnable">
+              </datalist>
+            </td>
+            
+          </tr>
+          <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="text" placeholder="Material" readonly/></td>
+            <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+            <td><input type="text" placeholder="Item Description" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly>            
+                <datalist id="type">
+                  <option value="Returnable">
+                  <option value="Non-Returnable">
+                </datalist>
+              </td>
+              
+            </tr>
+            <tr>
+              <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+              <td><input type="text" placeholder="Material" readonly/></td>
+              <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+              <td><input type="text" placeholder="Item Description" readonly/></td>
+              <td><input list="type" placeholder="Type" readonly>            
+                  <datalist id="type">
+                    <option value="Returnable">
+                    <option value="Non-Returnable">
+                  </datalist>
+                </td>
+                
+              </tr>
+              <tr>
+                <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                <td><input type="text" placeholder="Material" readonly/></td>
+                <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                <td><input type="text" placeholder="Item Description" readonly/></td>
+                <td><input list="type" placeholder="Type" readonly>            
+                    <datalist id="type">
+                      <option value="Returnable">
+                      <option value="Non-Returnable">
+                    </datalist>
+                  </td>
+                  
+                </tr>
+                <tr>
+                  <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                  <td><input type="text" placeholder="Material" readonly/></td>
+                  <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                  <td><input type="text" placeholder="Item Description" readonly/></td>
+                  <td><input list="type" placeholder="Type" readonly>            
+                      <datalist id="type">
+                        <option value="Returnable">
+                        <option value="Non-Returnable">
+                      </datalist>
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                    <td><input type="text" placeholder="Material" readonly/></td>
+                    <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                    <td><input type="text" placeholder="Item Description" readonly/></td>
+                    <td><input list="type" placeholder="Type" readonly>            
+                        <datalist id="type">
+                          <option value="Returnable">
+                          <option value="Non-Returnable">
+                        </datalist>
+                      </td>
+                      
+                    </tr>
+                    <tr>
+                      <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                      <td><input type="text" placeholder="Material" readonly/></td>
+                      <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                      <td><input type="text" placeholder="Item Description" readonly/></td>
+                      <td><input list="type" placeholder="Type" readonly>            
+                          <datalist id="type">
+                            <option value="Returnable">
+                            <option value="Non-Returnable">
+                          </datalist>
+                        </td>
+                        
+                      </tr>
+                      <tr>
+                        <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                        <td><input type="text" placeholder="Material" readonly/></td>
+                        <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                        <td><input type="text" placeholder="Item Description" readonly/></td>
+                        <td><input list="type" placeholder="Type" readonly>            
+                            <datalist id="type">
+                              <option value="Returnable">
+                              <option value="Non-Returnable">
+                            </datalist>
+                          </td>
+                          
+                        </tr>
+                        <tr>
+                          <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                          <td><input type="text" placeholder="Material" readonly/></td>
+                          <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                          <td><input type="text" placeholder="Item Description" readonly/></td>
+                          <td><input list="type" placeholder="Type" readonly>            
+                              <datalist id="type">
+                                <option value="Returnable">
+                                <option value="Non-Returnable">
+                              </datalist>
+                            </td>
+                            
+                          </tr>
+                          <tr>
+                            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                            <td><input type="text" placeholder="Material" readonly/></td>
+                            <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                            <td><input type="text" placeholder="Item Description" readonly/></td>
+                            <td><input list="type" placeholder="Type" readonly>            
+                                <datalist id="type">
+                                  <option value="Returnable">
+                                  <option value="Non-Returnable">
+                                </datalist>
+                              </td>
+                              
+                            </tr>                         -->
+          
+        </tbody>
+      </table>      
+      <input list="Pass IN/OUT" placeholder="Pass IN/OUT" required>            
+                    <datalist id="Pass IN/OUT">
+                      <option value="IN">
+                      <option value="OUT">
+                    </datalist>
+      <!-- <input type="text" placeholder="Sequrity Incharge" required/>
+      <input type="text" placeholder="Mobile" required/> -->
+      
+      <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn">Submit</button>
+        </div>        
+    </form>
+  </div>
+</div>

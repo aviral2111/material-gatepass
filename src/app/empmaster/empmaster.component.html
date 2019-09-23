@@ -1,0 +1,20 @@
+<div class="model-form">
+    <div class="form">
+        <h1>Employee Master</h1>
+        <p>Please fill in this form</p>
+        <hr>      
+      <form class="model-form">
+        <input type="text" placeholder="Emp. No." required/>
+        <input type="text" placeholder="Full Name" required/>
+        <input type="text" placeholder="Designation" required/>
+        <input type="text" placeholder="Mobile Number" required/>
+        <input type="email" placeholder="Email" required/>
+        <span class="radio">
+        <input type="radio" name="grade type" value="Issuer" required id="radio1" /><strong>ISSUER</strong><br><br>
+        <input type="radio" name="grade type" value="Authoriser" required id="radio2" /><strong>AUTHORISER</strong><br><br>
+        <input type="radio" name="grade type" value="Security Check" required id="radio3" /><strong>SECURITY CHECK</strong>
+        </span>
+        <button type="submit" (click)='submit()'>Submit</button>        
+      </form>
+    </div>
+</div>

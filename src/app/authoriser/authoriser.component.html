@@ -1,0 +1,177 @@
+<div class="model-form">
+  <div class="form">
+      <h1>Material Gatepass</h1>
+      <p> Please allow to dispatch the following materials</p>
+      <hr>     
+      <div *ngIf='loading'>We are loading data</div> 
+    <form class="model-form" #heroForm="ngForm">
+      <input type="text" placeholder="Sl. No." readonly value="{{g.slNo}}"/>
+      <input type="datetime-local" placeholder="please add date and time" readonly value="{{g.gatePassDate}}"/>
+      <input type="text" placeholder="Issuer Name" readonly value="{{g.issuerName}}"/>
+      <input type="text" placeholder="Issuer Mobile" readonly value="{{g.issuerMobile}}"/>
+      <input type="text" placeholder="Issuer Department" readonly value="{{g.issuerDepartment}}"/>
+      <input type="text" placeholder="To" readonly value="{{g.to}}"/>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 75px;">S.No.</th>
+            <th style="width: 25%;">Material</th>
+            <th style="width: 100px;">Quantity</th>
+            <th>Description</th>
+            <th style="width: 15%;">Type</th>
+            <th>Check Item</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of g.items" >
+                <td>{{item.srNo}}</td>
+                <td>{{item.materialName}}</td>
+                <td>{{g.items.length}}</td>           
+                <td>{{item.description}}</td>     
+                <td>Returnable</td>
+                <td><input type="Checkbox" placeholder="Item Checked" name='apporve' required [(ngModel)]="item.approved"></td>
+            </tr>
+           <!-- <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="text" placeholder="Material" readonly/></td>
+            <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+            <td><input type="text" placeholder="Item Description" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly>            
+              <datalist id="type">
+                <option value="Returnable">
+                <option value="Non-Returnable">
+              </datalist>
+            </td>
+            <td><input type="Checkbox" placeholder="Item Checked" required></td>
+          </tr>
+          <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="text" placeholder="Material" readonly/></td>
+            <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+            <td><input type="text" placeholder="Item Description" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly>            
+                <datalist id="type">
+                  <option value="Returnable">
+                  <option value="Non-Returnable">
+                </datalist>
+              </td>
+              <td><input type="checkbox" placeholder="Item Checked"></td>
+            </tr>
+            <tr>
+              <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+              <td><input type="text" placeholder="Material" readonly/></td>
+              <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+              <td><input type="text" placeholder="Item Description" readonly/></td>
+              <td><input list="type" placeholder="Type" readonly>            
+                  <datalist id="type">
+                    <option value="Returnable">
+                    <option value="Non-Returnable">
+                  </datalist>
+                </td>
+                <td><input type="Checkbox" placeholder="Item Checked"></td>
+              </tr>
+              <tr>
+                <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                <td><input type="text" placeholder="Material" readonly/></td>
+                <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                <td><input type="text" placeholder="Item Description" readonly/></td>
+                <td><input list="type" placeholder="Type" readonly>            
+                    <datalist id="type">
+                      <option value="Returnable">
+                      <option value="Non-Returnable">
+                    </datalist>
+                  </td>
+                  <td><input type="Checkbox" placeholder="Item Checked"></td>
+                </tr>
+                <tr>
+                  <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                  <td><input type="text" placeholder="Material" readonly/></td>
+                  <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                  <td><input type="text" placeholder="Item Description" readonly/></td>
+                  <td><input list="type" placeholder="Type" readonly>            
+                      <datalist id="type">
+                        <option value="Returnable">
+                        <option value="Non-Returnable">
+                      </datalist>
+                    </td>
+                    <td><input type="Checkbox" placeholder="Item Checked"></td>
+                  </tr>
+                  <tr>
+                    <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                    <td><input type="text" placeholder="Material" readonly/></td>
+                    <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                    <td><input type="text" placeholder="Item Description" readonly/></td>
+                    <td><input list="type" placeholder="Type" readonly>            
+                        <datalist id="type">
+                          <option value="Returnable">
+                          <option value="Non-Returnable">
+                        </datalist>
+                      </td>
+                      <td><input type="checkbox" placeholder="Item Checked"></td>
+                    </tr>
+                    <tr>
+                      <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                      <td><input type="text" placeholder="Material" readonly/></td>
+                      <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                      <td><input type="text" placeholder="Item Description" readonly/></td>
+                      <td><input list="type" placeholder="Type" readonly>            
+                          <datalist id="type">
+                            <option value="Returnable">
+                            <option value="Non-Returnable">
+                          </datalist>
+                        </td>
+                        <td><input type="checkbox" placeholder="Item Checked"></td>
+                      </tr>
+                      <tr>
+                        <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                        <td><input type="text" placeholder="Material" readonly/></td>
+                        <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                        <td><input type="text" placeholder="Item Description" readonly/></td>
+                        <td><input list="type" placeholder="Type" readonly>            
+                            <datalist id="type">
+                              <option value="Returnable">
+                              <option value="Non-Returnable">
+                            </datalist>
+                          </td>
+                          <td><input type="checkbox" placeholder="Item Checked"></td>
+                        </tr>
+                        <tr>
+                          <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                          <td><input type="text" placeholder="Material" readonly/></td>
+                          <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                          <td><input type="text" placeholder="Item Description" readonly/></td>
+                          <td><input list="type" placeholder="Type" readonly>            
+                              <datalist id="type">
+                                <option value="Returnable">
+                                <option value="Non-Returnable">
+                              </datalist>
+                            </td>
+                            <td><input type="Checkbox" placeholder="Item Checked"></td>
+                          </tr>
+                          <tr>
+                            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+                            <td><input type="text" placeholder="Material" readonly/></td>
+                            <td><input type="number" placeholder="Quantity" min="1" max="100" readonly/></td>
+                            <td><input type="text" placeholder="Item Description" readonly/></td>
+                            <td><input list="type" placeholder="Type" readonly>            
+                                <datalist id="type">
+                                  <option value="Returnable">
+                                  <option value="Non-Returnable">
+                                </datalist>
+                              </td>
+                              <td><input type="Checkbox" placeholder="Item Checked"></td>
+                            </tr>                         -->
+          
+        </tbody>
+      </table>      
+      <!-- <input type="text" placeholder="Checked By" required/>
+      <input type="text" placeholder="Department" required/>
+      <input type="text" placeholder="Mobile" required/> -->
+
+      <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn" (click)='subit()'>Submit</button>
+        </div>        
+    </form>
+  </div>
+</div>

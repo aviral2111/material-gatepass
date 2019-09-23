@@ -1,0 +1,87 @@
+<div class="model-form">
+  <div class="form">
+      <h1>Material Gatepass</h1>
+      <p> Please click on edit to edit selected material gatepass.</p>
+      <hr>      
+      <div *ngIf='loading'>We are loading data</div> 
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 75px;">S.No.</th>
+            <th style="width: 25%;">Date-Time</th>
+            <th>Issuer</th>
+            <th style="width: 100px;">No. of Materials</th>            
+            <th style="width: 20%;">Gatepass Type</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let gatePass of listGatePass" >
+                <td>{{gatePass.items[0].srNo}}</td>
+                <td>{{gatePass.gatePassDate | date:'short'}}</td>
+                <td>{{gatePass.issuerName}}</td>                
+                <td>{{gatePass.items.length}}</td>
+                <td>returnable</td>
+                <td><a  class="btn btn-warning" (click)='rowClick(gatePass)'>edit</a></td>
+              </tr>
+          <!-- <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="datetime" placeholder="Date-Time" readonly/></td>
+            <td><input type="text" placeholder="Issuer" readonly/></td>
+            <td><input type="number" placeholder="No. of materials" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly></td>
+            <td><a href="#" class="btn btn-warning">Edit</a></td>
+          </tr>
+          <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="datetime" placeholder="Date-Time" readonly/></td>
+            <td><input type="text" placeholder="Issuer" readonly/></td>
+            <td><input type="number" placeholder="No. of materials" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly></td>
+            <td><a href="#" class="btn btn-warning">Edit</a></td>
+          </tr>
+          <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="datetime" placeholder="Date-Time" readonly/></td>
+            <td><input type="text" placeholder="Issuer" readonly/></td>
+            <td><input type="number" placeholder="No. of materials" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly></td>
+            <td><a href="#" class="btn btn-warning">Edit</a></td>
+          </tr>
+          <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="datetime" placeholder="Date-Time" readonly/></td>
+            <td><input type="text" placeholder="Issuer" readonly/></td>
+            <td><input type="number" placeholder="No. of materials" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly></td>
+            <td><a href="#" class="btn btn-warning">Edit</a></td>
+          </tr>
+          <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="datetime" placeholder="Date-Time" readonly/></td>
+            <td><input type="text" placeholder="Issuer" readonly/></td>
+            <td><input type="number" placeholder="No. of materials" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly></td>
+            <td><a href="#" class="btn btn-warning">Edit</a></td>
+          </tr>
+          <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="datetime" placeholder="Date-Time" readonly/></td>
+            <td><input type="text" placeholder="Issuer" readonly/></td>
+            <td><input type="number" placeholder="No. of materials" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly></td>
+            <td><a href="#" class="btn btn-warning">Edit</a></td>
+          </tr>
+          <tr>
+            <td><input type="number" placeholder="SNo." min="1" readonly/></td>
+            <td><input type="datetime" placeholder="Date-Time" readonly/></td>
+            <td><input type="text" placeholder="Issuer" readonly/></td>
+            <td><input type="number" placeholder="No. of materials" readonly/></td>
+            <td><input list="type" placeholder="Type" readonly></td>
+            <td><a href="#" class="btn btn-warning">Edit</a></td>
+          </tr> -->
+          
+        </tbody>
+      </table>   
+  </div>
+</div>

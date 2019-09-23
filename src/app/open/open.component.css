@@ -1,0 +1,20 @@
+img{
+    width: 400px;
+    height: 475px;    
+}
+h1{
+    text-align: center;
+    color: azure;
+}
+p{
+    text-align: center;
+    color: azure;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 17px;
+    
+}
